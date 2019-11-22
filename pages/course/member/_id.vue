@@ -39,6 +39,9 @@
 
 <script>
 export default {
+    head: {
+        title: "健康活力卡"
+    },
     data() {
         return {
             prePage:"#",
