@@ -1,3 +1,3 @@
 <template lang="pug">
-    .test id
+    .test register-step4
 </template>
