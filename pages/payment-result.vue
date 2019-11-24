@@ -9,12 +9,12 @@
                 .success-msg(v-if="status")
                     .success-msg__icon
                     .success-msg__description 恭喜您付款成功！
-                .fail-msg(v-else="status")
+                .fail-msg(v-else)
                     .fail-msg__icon
                     .fail-msg__description 購買失敗</br>請重新操作一次
         .confirm-btn
             a(:href="successConfirmPage" v-if="status") 確認
-            a(:href="failConfirmPage" v-else="status") 確認
+            a(:href="failConfirmPage" v-else) 確認
 </template>
 
 <script>
