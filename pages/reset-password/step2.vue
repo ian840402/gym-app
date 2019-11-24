@@ -17,15 +17,11 @@
                 .form-style__wrapper
                     .form-style__item
                         input(type="text" name="tel-verification-code-1" maxlength="1" v-model="verification_code_1")#tel-verification__code-1.form-style__item__input
-                    .form-style__item
                         input(type="text" name="tel-verification-code-2" maxlength="1" v-model="verification_code_2")#tel-verification__code-2.form-style__item__input
-                    .form-style__item
                         input(type="text" name="tel-verification-code-3" maxlength="1" v-model="verification_code_3")#tel-verification__code-3.form-style__item__input
-                    .form-style__item
+                        .form-style__item__separate -
                         input(type="text" name="tel-verification-code-4" maxlength="1" v-model="verification_code_4")#tel-verification__code-4.form-style__item__input
-                    .form-style__item
                         input(type="text" name="tel-verification-code-5" maxlength="1" v-model="verification_code_5")#tel-verification__code-5.form-style__item__input
-                    .form-style__item
                         input(type="text" name="tel-verification-code-6" maxlength="1" v-model="verification_code_6")#tel-verification__code-6.form-style__item__input
                 .form-style__change-tel
                     .descrition 修正手機號碼
