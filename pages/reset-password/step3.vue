@@ -32,7 +32,7 @@
         data () {
             return {
                 prePage: "#",
-                isSet: true,
+                isSet: false,
                 successPage: "",
                 password: "",
                 rePassword: "",

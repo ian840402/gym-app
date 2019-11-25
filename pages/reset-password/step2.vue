@@ -23,8 +23,6 @@
                         input(type="text" name="tel-verification-code-4" maxlength="1" v-model="verification_code_4")#tel-verification__code-4.form-style__item__input
                         input(type="text" name="tel-verification-code-5" maxlength="1" v-model="verification_code_5")#tel-verification__code-5.form-style__item__input
                         input(type="text" name="tel-verification-code-6" maxlength="1" v-model="verification_code_6")#tel-verification__code-6.form-style__item__input
-                .form-style__change-tel
-                    .descrition 修正手機號碼
                 .form-style__resend
                     .resend-time
                     .resend-title

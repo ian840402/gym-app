@@ -16,10 +16,10 @@
                     label(for="card-number-1").form-style__item__label 卡號
                     .card-number-placeholder(v-show="isFill") 請輸入您的信用卡號
                     .form-style__item__wrapper
-                        input(type="text" name="card-number-1" v-model="cardNumber_1")#card-number-1.form-style__item__input
-                        input(type="text" name="card-number-2" v-model="cardNumber_2")#card-number-2.form-style__item__input
-                        input(type="text" name="card-number-3" v-model="cardNumber_3")#card-number-3.form-style__item__input
-                        input(type="text" name="card-number-4" v-model="cardNumber_4")#card-number-4.form-style__item__input
+                        input(type="text" name="card-number-1" maxlength="4" v-model="cardNumber_1")#card-number-1.form-style__item__input
+                        input(type="text" name="card-number-2" maxlength="4" v-model="cardNumber_2")#card-number-2.form-style__item__input
+                        input(type="text" name="card-number-3" maxlength="4" v-model="cardNumber_3")#card-number-3.form-style__item__input
+                        input(type="text" name="card-number-4" maxlength="4" v-model="cardNumber_4")#card-number-4.form-style__item__input
                 .form-style__wrapper
                     .form-style__item
                         label(for="card-date-MM").form-style__item__label 有效期限
