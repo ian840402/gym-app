@@ -12,6 +12,7 @@
                 .progress-bar__item.now-step 4
             .register-complete(v-if="isSet")
                 .register-complete__icon
+                    img(src="~assets/images/success.png")
                 .register-complete__description 恭喜您註冊成功
                 .confirm-btn
                     a(:href="successPage") 完成

@@ -15,6 +15,7 @@
                                 a(:href="'course/'+courseType.type+'/'+course.id")
                                     .course-list__item__wrapper
                                         .item-image
+                                            img(src="~assets/images/course-list.png")
                                         .item-content-wrapper
                                             .item-content
                                                 .item-content__title {{ course.title }}

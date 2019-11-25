@@ -1,1 +1,16 @@
-// 樣式文件
+// base
+@import './base/base.scss';
+
+// layout
+@import './layout/defualt.scss';
+
+// mixin
+
+// component
+@import './components/pageTitle.scss';
+@import './components/pageTab.scss';
+@import './components/confirmBtn.scss';
+
+// container
+@import './container/container.scss';
+

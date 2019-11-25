@@ -1,7 +1,6 @@
-<template>
-  <div>
-    <nuxt />
-  </div>
+<template lang="pug">
+  #gym-app-page
+    nuxt
 </template>
 
 <style>

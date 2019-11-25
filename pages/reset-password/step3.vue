@@ -11,6 +11,7 @@
                 .progress-bar__item.now-step 3
             .reset-complete(v-if="isSet")
                 .reset-complete__icon
+                    img(src="~assets/images/password-reset.png")
                 .reset-complete__description 您的密碼已經重設
                 .confirm-btn
                     a(:href="successPage") 確認
