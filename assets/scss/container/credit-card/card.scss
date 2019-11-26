@@ -1,0 +1,50 @@
+.card-info-block {
+    padding: 22px 40px;
+    margin: 24px 12px 0px 12px;
+    opacity: 0.83;
+    border-radius: 8px;
+    background-color: #383838;
+    box-sizing: border-box;
+    .card-info {
+        &__item {
+            margin-bottom: 28px;
+            &__title {
+                font-size: 15px;
+                font-weight: 500;
+                letter-spacing: 1.36px;
+                color: #ffcd05;
+                margin-bottom: 20px;
+                &::after {
+                    content: '';
+                    display: block;
+                    width: 15px;
+                    height: 1px;
+                    background-color: #ffcd05;
+                    margin-top: 5px;
+                }
+            }
+            &__value {
+                display: flex;
+                justify-content: space-between;
+            }
+            &:last-child {
+                margin-bottom: unset;
+            }
+        }
+        &__wrapper {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 28px;
+            > div {
+                max-width: 40%;
+                width: 100%;
+                margin-bottom: unset;
+            }
+        }
+    }
+}
+
+#edit-credit-card {
+    margin-top: 24px;
+    min-height: calc(100vh - 410px);
+}

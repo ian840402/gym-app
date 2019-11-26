@@ -3,7 +3,11 @@
         .header
             .header__link
                 a(:href="prePage")
-            .header__title 加入會員
+            .header__title
+                .add-member
+                    .add-member__icon
+                        img(src="~assets/images/member-icon.png")
+                    .add-member__text 加入會員
         .main
             .progress-bar
                 .progress-bar__item.now-step 1

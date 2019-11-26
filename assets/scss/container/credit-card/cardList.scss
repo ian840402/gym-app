@@ -1,0 +1,118 @@
+.card-block-wrapper {
+    margin: 0px 12px;
+    .card-block {
+        margin-top: 30px;
+        .card-block-title {
+            font-size: 15px;
+            font-weight: 500;
+            line-height: 1;
+            letter-spacing: 1px;
+            color: #ffcd05;
+            margin-bottom: 20px;
+        }
+        .card {
+            a {
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+            .card-wrapper {
+                border-radius: 6px;
+                padding: 34px 26px 50px 26px;
+                box-sizing: border-box;
+                position: relative;
+                .card__item {
+                    &__title {
+                        font-size: 13px;
+                        letter-spacing: 1px;
+                        color: #ff824f;
+                        margin-bottom: 8px;
+                    }
+                    &__value {
+                        display: flex;
+                        justify-content: space-between;
+                        padding: 0px 10px;
+                        box-sizing: border-box;
+                        font-size: 13px;
+                        font-weight: 500;
+                        letter-spacing: 1px;
+                    }
+                }
+                .crad-item-wrapper {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 33px;
+                    .card__item__value {
+                        padding: unset;
+                    }
+                }
+                .card__delete {
+                    display: none;
+                    max-width: 27px;
+                    position: absolute;
+                    top: -13px;
+                    right: -13px;
+                    &.show {
+                        display: block;
+                    }
+                }
+                &:nth-child(1) {
+                    background: -webkit-linear-gradient(to left,#8f4cda,#d555ab);
+                    background: -o-linear-gradient(to left,#8f4cda,#d555ab);
+                    background: -moz-linear-gradient(to left,#8f4cda,#d555ab);
+                    background: linear-gradient(to left,#8f4cda,#d555ab);
+                }
+                &:nth-child(2) {
+                    background: -webkit-linear-gradient(to left,#f6d365,#fda085);
+                    background: -o-linear-gradient(to left,#f6d365,#fda085);
+                    background: -moz-linear-gradient(to left,#f6d365,#fda085);
+                    background: linear-gradient(to left,#f6d365,#fda085);
+                }
+                &.default-card {
+                    background: -webkit-linear-gradient(to left,#a1c4fd,#759cff);
+                    background: -o-linear-gradient(to left,#a1c4fd,#759cff);
+                    background: -moz-linear-gradient(to left,#a1c4fd,#759cff);
+                    background: linear-gradient(to left,#a1c4fd,#759cff);
+                }
+            }
+            .card-subscription {
+                margin-top: 8px;
+                padding-left: 25px;
+                background: url('../images/tag-icon.png') left center no-repeat;
+                background-size: 15px 17px;
+            }
+            &.card-list__item {
+                margin-bottom: 24px;
+            }
+        }
+    }
+    .card-add {
+        max-width: 319px;
+        width: 100%;
+        height: 175px;
+        border-radius: 4px;
+        border: 0.5px dashed #ffffff;
+        background-color: #6e6e6e;
+        a {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+        &__icon {
+            max-width: 25px;
+            width: 100%;
+        }
+        &__title {
+            font-size: 15px;
+            letter-spacing: 1px;
+            margin: 5px 0px;
+        }
+        &__description {
+            font-size: 15px;
+            letter-spacing: 1px;
+        }
+    }
+}
