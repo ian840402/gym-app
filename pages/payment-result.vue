@@ -14,10 +14,10 @@
                     .payment-result__msg__icon.fail-msg__icon
                         img(src="~assets/images/fail.png")
                     .payment-result__msg__description.fail-msg__description 購買失敗</br>請重新操作一次
-        input(type="checkbox" v-model="status")
-        .confirm-btn
-            a(:href="successConfirmPage" v-if="status") 確認
-            a(:href="failConfirmPage" v-else) 確認
+                input(type="checkbox" v-model="status")
+                .confirm-btn
+                    a(:href="successConfirmPage" v-if="status") 確認
+                    a(:href="failConfirmPage" v-else) 確認
 </template>
 
 <script>

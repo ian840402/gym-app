@@ -1,7 +1,13 @@
+// 付款結果
 @import './payment-result/payment-result.scss';
 
+// 課程
 @import './course/index.scss';
 @import './course/member.scss';
 @import './course/standard.scss';
 
+// 重設密碼
 @import './resetPassword/step.scss';
+
+// 加入會員
+@import './register/step.scss';

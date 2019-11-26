@@ -1,9 +1,10 @@
 .payment-result {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
+    min-height: calc(100vh - 196px);
     margin-top: 130px;
-    margin-bottom: 170px;
     &__msg {
         width: 100%;
         &__icon {

@@ -1,0 +1,19 @@
+// step 4
+.register-complete {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: calc(100vh - 200px);
+    margin-top: 94px;
+    &__icon {
+        max-width: 117px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    &__description {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 15px;
+        letter-spacing: 1px;
+    }
+}

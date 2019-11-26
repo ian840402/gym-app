@@ -3,7 +3,7 @@
     <div>
       <logo />
       <h1 class="title">gym-app</h1>
-      <h2 class="subtitle">gym-app</h2>
+      <h2 class="subtitle">健身APP</h2>
       <div class="links">
         a(href="payment-result").button--green 付款結果
         a(href="course").button--green 課程列表

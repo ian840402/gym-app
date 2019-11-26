@@ -1,21 +1,30 @@
 .form-style {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: calc(100vh - 164px);
+    height: 100%;
     margin-top: 58px;
     padding: 0px 12px;
     box-sizing: border-box;
+    .form-wrapper {
+        margin-bottom: 54px;
+    }
     .form-title {
         font-size: 19px;
         font-weight: 500;
         color: #ffcd05;
+        margin-bottom: 30px;
     }
     .form-description {
         padding: 17px 8px;
         box-sizing: border-box;
-        margin-top: 43px;
+        margin-top: 30px;
     }
     &__item {
         display: flex;
         flex-direction: column;
-        padding: 17px 8px;
+        padding: 17px 0px;
         box-sizing: border-box;
         &__label {
             display: flex;
@@ -23,6 +32,8 @@
             font-size: 13px;
             font-weight: 500;
             margin-bottom: 5px;
+            padding: 0px 8px;
+            box-sizing: border-box;
             .show-password {
                 display: flex;
                 input[type="checkbox"] {
@@ -51,8 +62,10 @@
             }
         }
         &__input {
+            width: 100%;
             font-size: 17px;
-            padding: 9px 0px;
+            color: #ffffff;
+            padding: 9px 8px;
             border: unset;
             background-color: unset;
             border-bottom: 1px solid #FFFFFF50;
@@ -74,6 +87,32 @@
                 margin-right: unset;
             }
         }
+        &__select {
+            width: 100%;
+            appearance: none;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            font-size: 17px;
+            color: #b9b9b9;
+            background-color: unset;
+            border: unset;
+            border-radius: unset;
+            padding: 9px 8px;
+            border-bottom: 1px solid #FFFFFF50;
+            &._chk {
+                color: #ffffff;
+            }
+        }
+        &__subitem {
+            max-width: 50%;
+            width: 100%;
+            padding-right: 7px;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+            &:last-child {
+                padding-left: 7px;
+            }
+        }
         &__separate {
             font-size: 16px;
             color: #FFFFFF50;
@@ -82,6 +121,53 @@
         &__wrapper {
             display: flex;
             align-items: center;
+            // 性別選項
+            .gender {
+                display: flex;
+                padding-top: 16px;
+                .gender-item {
+                    input[type="radio"] {
+                        display: none;
+                    }
+                    input[type="radio"] + label {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 32px;
+                        height: 32px;
+                        color: #ffcd05;
+                        border-radius: 3px;
+                        border: 1px solid #ffcd05;
+                        margin-right: 20px;
+                        cursor: pointer;
+                    }
+                    input[type="radio"]:checked + label {
+                        color: #000000;
+                        background-color: #ffcd05;
+                    }
+                }
+            }
+            .ratype {
+                display: flex;
+                padding-top: 14px;
+                padding-bottom: 17px;
+                .ratype-item {
+                    input[type="radio"] {
+                        display: none;
+                    }
+                    input[type="radio"] + label {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        color: #b9b9b9;
+                        margin-right: 30px;
+                        cursor: pointer;
+                    }
+                    input[type="radio"]:checked + label {
+                        color: #ffffff;
+                    }
+                }
+            }
         }
     }
     &__resend {
@@ -122,6 +208,7 @@
         }
     }
     &__submit {
+        margin-bottom: 10px;
         input{
             display: block;
             width: 100%;
