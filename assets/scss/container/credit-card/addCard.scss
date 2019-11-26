@@ -18,8 +18,9 @@
             &__icon {
                 display: flex;
                 &__item {
-                    width: 35px;
-                    height: 15px;
+                    width: 30px;
+                    height: 30px;
+                    margin-right: 10px;
                 }
             }
         }
@@ -52,7 +53,8 @@
                 display: block;
                 width: 20px;
                 height: 14px;
-                background:#ffffff;
+                background: url('../images/card-icon.png') left center no-repeat;
+                background-size: 100%;
                 margin-right: 20px;
             }
             &._wright {
@@ -105,8 +107,13 @@
                 font-weight: 500;
                 padding-left: 30px;
                 cursor: pointer;
+                background: url('../images/checkbox-yellow.png') left center no-repeat;
+                background-size: 18px 18px;
             }
-            input[type="checkbox"]:checked + label {}
+            input[type="checkbox"]:checked + label {
+                background: url('../images/checkbox-yellow-chk.png') left center no-repeat;
+                background-size: 18px 18px;
+            }
         }
     }
     &__submit {

@@ -11,8 +11,11 @@
                         .card-description__title 可接受之信用卡
                         .card-description__icon
                             .card-description__icon__item.icon-visa
+                                img(src="~/assets/images/visa-icon.png")
                             .card-description__icon__item.icon-master-card
+                                img(src="~/assets/images/master-icon.png")
                             .card-description__icon__item.icon-jcb
+                                img(src="~/assets/images/jcb-icon.png")
                     .card-form-style__item
                         label(for="card-number-1").card-form-style__item__label 卡號
                         .card-number-placeholder(v-show="isFill") 請輸入您的信用卡號

@@ -99,6 +99,8 @@
             border-radius: unset;
             padding: 9px 8px;
             border-bottom: 1px solid #FFFFFF50;
+            background: url('../images/arrow-down.png') right center no-repeat;
+            background-size: 14px 8px;
             &._chk {
                 color: #ffffff;
             }
@@ -160,11 +162,16 @@
                         justify-content: center;
                         align-items: center;
                         color: #b9b9b9;
-                        margin-right: 30px;
+                        padding-left: 26px;
                         cursor: pointer;
+                        background: url('~assets/images/checkbox-gray.png') left center no-repeat;
+                        background-size: 18px 18px;
+                        margin-right: 24px;
                     }
                     input[type="radio"]:checked + label {
                         color: #ffffff;
+                        background: url('~assets/images/checkbox-gray-chk.png') left center no-repeat;
+                        background-size: 18px 18px;
                     }
                 }
             }
