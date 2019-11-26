@@ -4,9 +4,13 @@
             .header__link
                 a(:href="prePage")
             .header__title  {{ title }}
-        .main
-            .course-slideshow
-            .course-content
+        .main.course-info
+            .member-slideshow
+                .member-slideshow__cover
+                    img(src="~assets/images/member-cover.png")
+                .member-slideshow__image
+                    img(src="~assets/images/member-img.png")
+            .course-content.membercontent
                 .course-content__id 課程代號：{{ cid }}
                 .course-content__content {{ content }}
                 .course-content__date
@@ -25,16 +29,19 @@
                     .course-content__gift__title 贈送課程
                     ul.course-content__gift__list
                         li.course-content__gift__list__item(v-for="item in gift")
+                            .item-image
+                                img(src="~assets/images/gift-img1.png")
+                                //- img(:src="item.image")
                             .item-title {{ item.title }}
                 .course-content__price
                     .course-content__price__title 價格
                     .course-content__price__wrapper
                         .title 售價
                         .price
-                            .price__original {{ fakePrice }}
-                            .price__discount {{ price }}
-            .confirm-btn
-                a(:href="buyPage") 立即購買
+                            .price__original ${{ fakePrice }}
+                            .price__discount ${{ price }}
+                .confirm-btn
+                    a(:href="buyPage") 立即購買
 </template>
 
 <script>
@@ -78,15 +85,15 @@ export default {
             gift: [
                 {
                     title: "BUNGEE/3堂課",
-                    image: ""
+                    image: "/_nuxt/assets/images/gift-img1.png"
                 },
                 {
                     title: "皮拉提斯/2堂課",
-                    image: ""
+                    image: "/_nuxt/assets/images/gift-img2.png"
                 },
                 {
                     title: "BUNGEE/3堂課",
-                    image: ""
+                    image: "/_nuxt/assets/images/gift-img1.png"
                 },
             ],
             slide: [

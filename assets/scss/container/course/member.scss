@@ -1,0 +1,11 @@
+.member-slideshow {
+    position: relative;
+    z-index: -1;
+    height: 208px;
+    &__cover {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
+}

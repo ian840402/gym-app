@@ -4,8 +4,9 @@
             .header__link
                 a(:href="prePage")
             .header__title  {{ title }}
-        .main
+        .main.course-info
             .course-slideshow
+                img(src="~assets/images/standard-img.png")
             .course-content
                 .course-content__id 課程代號：{{ cid }}
                 .course-content__content {{ content }}
@@ -26,10 +27,10 @@
                     .course-content__price__wrapper
                         .title 售價
                         .price
-                            .price__original {{ fakePrice }}
-                            .price__discount {{ price }}
-            .confirm-btn
-                a(:href="buyPage") 立即購買
+                            .price__original ${{ fakePrice }}
+                            .price__discount ${{ price }}
+                .confirm-btn
+                    a(:href="buyPage") 立即購買
 </template>
 
 <script>

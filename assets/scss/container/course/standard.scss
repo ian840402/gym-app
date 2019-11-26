@@ -1,0 +1,214 @@
+.course-info {
+    position: relative;
+    margin: -66px -16px 0px -16px;
+    z-index: 1;
+    .course-slideshow {
+        position: relative;
+        height: 241px;
+        opacity: 0.35;
+        background-color: #a3a3a3;
+        z-index:-1;
+    }
+    .course-content {
+        padding: 36px 16px 0px 16px;
+        box-sizing: border-box;
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+        background-color: #4a4a4a;
+        margin-top: -25px;
+        &__id {
+            font-size: 15px;
+            letter-spacing: 1px;
+            margin-bottom: 24px;
+        }
+        &__content {
+            font-size: 15px;
+            letter-spacing: 1px;
+            margin-bottom: 32px;
+        }
+        &__date {
+            &__title {
+                font-size: 14px;
+                font-weight: 500;
+                letter-spacing: 1px;
+                color: #ffcd05;
+                margin-bottom: 20px;
+            }
+            &__list {
+                margin-bottom: 32px;
+                &__item {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    border-radius: 6px;
+                    background-color: #565656;
+                    padding: 10px 13px;
+                    margin-bottom: 12px;
+                    &:last-child {
+                        margin-bottom: unset;
+                    }
+                    .item-title {
+                        display: flex;
+                        align-items: center;
+                        font-size: 17px;
+                        letter-spacing: 1.5px;
+                        &::before {
+                            content: '';
+                            display: block;
+                            width: 17px;
+                            height: 17px;
+                            margin-right: 7px;
+                            background: url('../images/time-icon.png') center center no-repeat;
+                            background-size: 100%;
+                        }
+                    }
+                    .item-time {
+                        font-size: 17px;
+                        letter-spacing: 1.5px;
+                    }
+                }
+            }
+        }
+        &__time {
+            &__title {
+                font-size: 14px;
+                font-weight: 500;
+                letter-spacing: 1px;
+                color: #ffcd05;
+                margin-bottom: 20px;
+            }
+            &__list {
+                margin-bottom: 32px;
+                &__item {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    border-radius: 6px;
+                    background-color: #565656;
+                    padding: 10px 13px;
+                    margin-bottom: 12px;
+                    &:last-child {
+                        margin-bottom: unset;
+                    }
+                    .item-title {
+                        display: flex;
+                        align-items: center;
+                        font-size: 17px;
+                        letter-spacing: 1.5px;
+                    }
+                    .item-time {
+                        font-size: 17px;
+                        letter-spacing: 1.5px;
+                    }
+                    &.number {
+                        .item-title::before {
+                            content: '';
+                            display: block;
+                            width: 17px;
+                            height: 17px;
+                            margin-right: 7px;
+                            background: url('../images/device-icon.png') center center no-repeat;
+                            background-size: 100%;
+                        }
+                    }
+                    &.date {
+                        .item-title::before {
+                            content: '';
+                            display: block;
+                            width: 17px;
+                            height: 17px;
+                            margin-right: 7px;
+                            background: url('../images/time-icon.png') center center no-repeat;
+                            background-size: 100%;
+                        }
+                    }
+                }
+            }
+        }
+        &__gift {
+            margin-bottom: 35px;
+            &__title {
+                font-size: 14px;
+                font-weight: 500;
+                letter-spacing: 1px;
+                color: #ffcd05;
+                margin-bottom: 20px;
+            }
+            &__list {
+                &__item {
+                    max-width: 184px;
+                    width: 100%;
+                    .item-image {
+                    }
+                    .item-title {
+                        text-align: center;
+                        margin-top: 12px;
+                        font-size: 15px;
+                        font-weight: 500;
+                        letter-spacing: 1px;
+                    }
+                }
+            }
+        }
+        &__price {
+            margin-bottom: 35px;
+            &__title {
+                font-size: 14px;
+                font-weight: 500;
+                letter-spacing: 1px;
+                color: #ffcd05;
+                margin-bottom: 20px;
+            }
+            &__wrapper {
+                display: flex;
+                justify-content: space-between;
+                border-radius: 6px;
+                background-color: #393939;
+                padding: 14px 16px;
+                box-sizing: border-box;
+                .title {
+                    display: flex;
+                    align-items: center;
+                    font-size: 13px;
+                    font-weight: 500;
+                    letter-spacing: 1px;
+                    &::before {
+                        content: '';
+                        display: block;
+                        width: 18px;
+                        height: 18px;
+                        margin-right: 7px;
+                        background: url('../images/money-icon.png') center center no-repeat;
+                        background-size: 100%;
+                    }
+                }
+                .price {
+                    display: flex;
+                    &__original {
+                        display: flex;
+                        align-items: center;
+                        font-size: 22px;
+                        font-weight: bold;
+                        letter-spacing: 1px;
+                        color: #929292;
+                        text-decoration: line-through;
+                        &::after {
+                            content: '';
+                            display: block;
+                            width: 14px;
+                            height: 3px;
+                            background: #ffffff;
+                            margin: 0px 12px;
+                        }
+                    }
+                    &__discount {
+                        font-size: 22px;
+                        font-weight: bold;
+                        letter-spacing: 1px;
+                        color: #ffcd05;
+                    }
+                }
+            }
+        }
+    }
+}

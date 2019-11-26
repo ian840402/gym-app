@@ -12,7 +12,7 @@
                     .course-wrapper
                         ul.course-list
                             li.course-list__item(v-for="(course,cIndex) in courseType.lesson" :class="[`course-item-${cIndex+1}`]")
-                                a(:href="'course/'+courseType.type+'/'+course.id")
+                                a(:href="'course/'+courseType.type")
                                     .course-list__item__wrapper
                                         .item-image
                                             img(src="~assets/images/course-list.png")
