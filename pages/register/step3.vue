@@ -79,7 +79,7 @@
 export default {
     data(){
         return{
-            prePage: "#",
+            prePage: "/",
             identity: "",
             country: "",
             profession: "",

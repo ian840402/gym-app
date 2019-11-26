@@ -31,7 +31,7 @@ export default {
     },
     data(){
         return{
-            prePage: "#",
+            prePage: "/",
             selected: 0,
             topArr: [ '日','一', '二', '三', '四', '五', '六' ],
             dateArr: ['2019/11/12'],

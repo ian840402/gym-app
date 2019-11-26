@@ -47,7 +47,7 @@
 export default {
     data(){
         return{
-            prePage: "#",
+            prePage: "/",
             isFill: true,
             cardNumber: "",
             cardNumber_1: "",

@@ -18,7 +18,10 @@
             form#reset-password.form-style(v-else)
                 .form-title 輸入新密碼
                 .form-style__item
-                    label(for="password").form-style__item__label 即將完成，請設定新的密碼<span class="show-password">顯示密碼</span>
+                    label(for="password").form-style__item__label 即將完成，請設定新的密碼
+                        .show-password
+                            input(type="checkbox" name="show-password" v-model="showPassword")#show-password.show-password__checkbox
+                            label(for="show-password").show-password__label 顯示密碼
                     input(type="text" name="password" placeholder="8-16碼，數字、英文大小寫" v-model="password")#password.form-style__item__input
                 .form-style__item
                     label(for="re-password").form-style__item__label 密碼確認
@@ -32,8 +35,9 @@
         head: {},
         data () {
             return {
-                prePage: "#",
+                prePage: "/",
                 isSet: false,
+                showPassword: false,
                 successPage: "",
                 password: "",
                 rePassword: "",

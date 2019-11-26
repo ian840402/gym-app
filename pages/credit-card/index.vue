@@ -43,7 +43,7 @@
 export default {
     data(){
         return{
-            prePage: "#",
+            prePage: "/",
             addCard: "/credit-card/add",
             cardDefault: {
                 number: "6578",

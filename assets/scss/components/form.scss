@@ -1,0 +1,146 @@
+.form-style {
+    margin-top: 58px;
+    padding: 0px 12px;
+    box-sizing: border-box;
+    .form-title {
+        font-size: 19px;
+        font-weight: 500;
+        color: #ffcd05;
+    }
+    .form-description {
+        padding: 17px 8px;
+        box-sizing: border-box;
+        margin-top: 43px;
+    }
+    &__item {
+        display: flex;
+        flex-direction: column;
+        padding: 17px 8px;
+        box-sizing: border-box;
+        &__label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            font-weight: 500;
+            margin-bottom: 5px;
+            .show-password {
+                display: flex;
+                input[type="checkbox"] {
+                    display: none;
+                }
+                input[type="checkbox"] + label {
+                    display: flex;
+                    align-items: center;
+                    &::before {
+                        content: "";
+                        display: block;
+                        width: 11px;
+                        height: 11px;
+                        border: #ffffff 1px solid;
+                        border-radius: 50%;
+                        margin-right: 6px;
+                        cursor: pointer;
+                    }
+                    
+                }
+                input[type="checkbox"]:checked + label {
+                    &::before {
+                        background-color: #ffffff;
+                    }
+                }
+            }
+        }
+        &__input {
+            font-size: 17px;
+            padding: 9px 0px;
+            border: unset;
+            background-color: unset;
+            border-bottom: 1px solid #FFFFFF50;
+            &::placeholder {
+                color: #b9b9b9;
+            }
+        }
+        &__code-input {
+            width: 36px;
+            height: 54px;
+            font-size: 17px;
+            color: #ffffff;
+            text-align: center;
+            border: 1px solid #FFFFFF50;
+            border-radius: 3px;
+            background-color: unset;
+            margin-right: 12px;
+            &:last-child {
+                margin-right: unset;
+            }
+        }
+        &__separate {
+            font-size: 16px;
+            color: #FFFFFF50;
+            margin-right: 12px;
+        }
+        &__wrapper {
+            display: flex;
+            align-items: center;
+        }
+    }
+    &__resend {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        font-size: 15px;
+        padding: 8px 0px;
+        border: unset;
+        border-radius: 6px;
+        margin-top: 154px;
+        margin-bottom: 16px;
+        background-color: #b9b9b9;
+        course: pointer;
+        .resend-time-up {
+            padding: 3px 0px;
+            color: #000000; 
+        }
+        .resend-countdown {
+            display: flex;
+            align-items: center;
+            &__time {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 12px;
+                width: 27px;
+                height: 27px;
+                background: url(../images/Rolling-1s-200px.svg) center center no-repeat;
+                background-size: 100%;
+            }
+            &__title {
+                margin-left: 7px;
+            }
+        }
+        &._block {
+            background-color: #8f8f8f;
+        }
+    }
+    &__submit {
+        input{
+            display: block;
+            width: 100%;
+            font-size: 15px;
+            color: #000000;
+            text-align: center;
+            padding: 11px 0px;
+            border: unset;
+            border-radius: 6px;
+            background: -webkit-linear-gradient(to left,#ffcd05,#ff940b);
+            background: -o-linear-gradient(to left,#ffcd05,#ff940b);
+            background: -moz-linear-gradient(to left,#ffcd05,#ff940b);
+            background: linear-gradient(to left,#ffcd05,#ff940b);
+        }
+        &._block {
+            input {
+                color: #565656;
+                background: #8f8f8f;
+            }
+        }
+    }
+}

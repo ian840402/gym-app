@@ -37,7 +37,7 @@
 export default {
     data(){
         return{
-            prePage: "#",
+            prePage: "/",
             lastPage: "#",
             isTimeUp: false,
             tel: "0974372628",

@@ -28,7 +28,7 @@
                         .price
                             .price__original {{ fakePrice }}
                             .price__discount {{ price }}
-            .buy-course-btn
+            .confirm-btn
                 a(:href="buyPage") 立即購買
 </template>
 
@@ -39,7 +39,7 @@ export default {
     },
     data() {
         return {
-            prePage:"#",
+            prePage:"/",
             id: "1",
             cid: "#A0000",
             title: "BUNGEE",

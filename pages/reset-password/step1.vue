@@ -26,7 +26,7 @@
         head: {},
         data () {
             return {
-                prePage: "#",
+                prePage: "/",
                 tel: "",
                 birth: ""
             }

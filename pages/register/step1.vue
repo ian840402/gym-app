@@ -47,7 +47,7 @@
 export default {
     data(){
         return{
-            prePage: "#",
+            prePage: "/",
             name: "",
             nickname: "",
             gender: "",
