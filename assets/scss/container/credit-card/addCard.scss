@@ -42,6 +42,7 @@
             display: flex;
             align-items: center;
             font-size: 17px;
+            height: 43px;
             letter-spacing: 1px;
             color: #b9b9b9;
             z-index: -1;
@@ -61,7 +62,11 @@
                 font-size:0px;
             }
         }
-        
+        .card-number-error {
+            color: #ff0000;
+            font-size: 12px;
+            position: absolute;
+        }
         &__input {
             width: 100%;
             font-size: 17px;
@@ -72,6 +77,9 @@
             border-bottom: 1px solid #FFFFFF50;
             &::placeholder {
                 color: #b9b9b9;
+            }
+            &:focus {
+                outline:none;
             }
         }
         &__wrapper {
@@ -122,20 +130,20 @@
             display: block;
             width: 100%;
             font-size: 15px;
-            color: #000000;
             text-align: center;
             padding: 11px 0px;
             border: unset;
             border-radius: 6px;
-            background: -webkit-linear-gradient(to left,#ffcd05,#ff940b);
-            background: -o-linear-gradient(to left,#ffcd05,#ff940b);
-            background: -moz-linear-gradient(to left,#ffcd05,#ff940b);
-            background: linear-gradient(to left,#ffcd05,#ff940b);
+            color: #565656;
+            background: #8f8f8f;
         }
-        &._block {
+        &.unblock {
             input {
-                color: #565656;
-                background: #8f8f8f;
+                color: #000000;
+                background: -webkit-linear-gradient(to left,#ffcd05,#ff940b);
+                background: -o-linear-gradient(to left,#ffcd05,#ff940b);
+                background: -moz-linear-gradient(to left,#ffcd05,#ff940b);
+                background: linear-gradient(to left,#ffcd05,#ff940b);
             }
         }
     }

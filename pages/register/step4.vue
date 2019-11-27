@@ -27,19 +27,21 @@
                     .form-title 緊急聯絡人資料
                     .form-style__item
                         label(for="emergency-contact-name").form-style__item__label 緊急聯絡人姓名
-                        input(type="text" name="emergency-contact-name" placeholder="請輸入緊急聯絡人姓名" v-model="eName")#emergency-contact-name.form-style__item__input
+                        input(type="text" name="emergency-contact-name" placeholder="請輸入緊急聯絡人姓名" v-model="eName" @change="verification")#emergency-contact-name.form-style__item__input
                     .form-style__item
                         label(for="emergency-contact-relation").form-style__item__label 緊急聯絡人關係
-                        input(type="text" name="emergency-contact-relation" placeholder="請輸入緊急聯絡人關係" v-model="eRelation")#emergency-contact-relation.form-style__item__input
+                        input(type="text" name="emergency-contact-relation" placeholder="請輸入緊急聯絡人關係" v-model="eRelation" @change="verification")#emergency-contact-relation.form-style__item__input
                     .form-style__item
                         label(for="emergency-contact-phone").form-style__item__label 緊急聯絡人電話
-                        input(type="text" name="emergency-contact-phone" placeholder="請輸入緊急聯絡人電話" v-model="ePhone")#emergency-contact-phone.form-style__item__input
-                .form-style__submit
+                        input(type="text" name="emergency-contact-phone" placeholder="請輸入緊急聯絡人電話" v-model="ePhone" @change="verification")#emergency-contact-phone.form-style__item__input
+                .form-style__submit(:class="{unblock: formStatus}")
                     input(type="submit" value="送出")#submit
 </template>
 </template>
 
 <script>
+import { formVerification } from '~/assets/js/form-verification.js'
+
 export default {
     data(){
         return{
@@ -49,6 +51,18 @@ export default {
             eName: "",
             eRelation: "",
             ePhone: "",
+            formStatus: false,
+        }
+    },
+    methods:{
+        verification(event){
+            let Arr = [
+                this.eName,
+                this.eRelation,
+                this.ePhone,
+            ];
+                
+            this.formStatus = formVerification(Arr);
         }
     }
 }

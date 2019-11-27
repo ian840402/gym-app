@@ -84,7 +84,7 @@ import { formVerification } from '~/assets/js/form-verification.js'
                 let valueReg = /[1-9]/g;
                 
                 if (valueReg.test(value) && dom !== null) {
-                    if (dom.localName === "input") {
+                    if (dom.tagName === "INPUT") {
                         dom.focus();
                     } else {
                         this.$refs.inputContinu.focus();
