@@ -29,7 +29,7 @@
                                 input(type="text" name="tel-verification-code-5" maxlength="1" v-model="verification_code_5" @keyup="verification")#tel-verification__code-5.form-style__item__code-input
                                 input(type="text" name="tel-verification-code-6" maxlength="1" v-model="verification_code_6" @keyup="verification")#tel-verification__code-6.form-style__item__code-input
                     .form-style__change-tel
-                        a.descrition(:herf="lastPage") 修正手機號碼
+                        a.descrition(:href="lastPage") 修正手機號碼
                 .form-btn
                     .form-style__resend(:class="{unblock:isTimeUp}")
                         .resend-time-up(v-if="isTimeUp") 重新寄出
@@ -42,15 +42,14 @@
 
 <script>
 import { formVerification } from '~/assets/js/form-verification.js'
-import verificationVue from '../credit-card/verification.vue';
 
 export default {
     data(){
         return{
             prePage: "/",
-            lastPage: "#",
+            lastPage: "/",
             isTimeUp: false,
-            time: 10,
+            time: 60,
             tel: "0974372628",
             verification_code: "",
             verification_code_1: "",
@@ -102,6 +101,5 @@ export default {
 
         }
     }
-
 }
 </script>

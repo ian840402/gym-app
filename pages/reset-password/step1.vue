@@ -14,23 +14,36 @@
                     .form-title 輸入驗證資料
                     .form-style__item
                         label(for="user-verification-tel").form-style__item__label 手機號碼
-                        input(type="text" name="user-verification-tel" placeholder="請輸入手機號碼" v-model="tel")#user-verification-tel.form-style__item__input
+                        input(type="text" name="user-verification-tel" placeholder="請輸入手機號碼" v-model="tel" @change="verification")#user-verification-tel.form-style__item__input
                     .form-style__item
                         label(for="user-verification-birth").form-style__item__label 生日
-                        input(type="text" name="user-verification-birth" placeholder="xxxx/xx/xx" v-model="birth")#user-verification-birth.form-style__item__input
-                .form-style__submit
+                        input(type="text" name="user-verification-birth" placeholder="xxxx/xx/xx" v-model="birth" @change="verification")#user-verification-birth.form-style__item__input
+                .form-style__submit(:class="{unblock: formStatus}")
                     input(type="submit" value="下一步")#user-verification-submit
 </template>
 
 <script>
+import { formVerification } from '~/assets/js/form-verification.js'
+
     export default {
         head: {},
         data () {
             return {
                 prePage: "/",
                 tel: "",
-                birth: ""
+                birth: "",
+                formStatus: false,
             }
         },
+        methods:{
+            verification(event){
+                let Arr = [
+                    this.tel,
+                    this.birth
+                ];
+                
+                this.formStatus = formVerification(Arr);
+            }
+        }
     }
 </script>>

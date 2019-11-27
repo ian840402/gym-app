@@ -177,6 +177,11 @@
             }
         }
     }
+    &__change-tel {
+        > a {
+            color: #ffffff;
+        }
+    }
     &__resend {
         display: flex;
         justify-content: center;
