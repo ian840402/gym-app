@@ -1,7 +1,55 @@
 // 此樣式基於套件樣式去調整
 .calender {
-    .wh_content_all {
+    .wh_content_all[data-v-2ebcbc83] {
         border-radius: 8px;
-        background-color: #383838 !important;
+        background-color: #383838;
+    }
+    .wh_top_changge[data-v-2ebcbc83] {
+        padding: 15px 0px;
+        border-bottom: 1px solid #FFFFFF50;
+        margin: 0px 13px;
+    }
+    .wh_top_changge li[data-v-2ebcbc83] {
+        font-size: 16px;
+    }
+    .wh_content_item {
+        .wh_chose_day[data-v-2ebcbc83] {
+            width: 30px;
+            height: 30px;
+            background: -webkit-linear-gradient(to left,#828282,#c5c0c0);
+            background: -o-linear-gradient(to left,#828282,#c5c0c0);
+            background: -moz-linear-gradient(to left,#828282,#c5c0c0);
+            background: linear-gradient(to left,#828282,#c5c0c0);
+        }
+    }
+    .wh_content_item>.wh_isMark[data-v-2ebcbc83] {
+        width: 30px;
+        height: 30px;
+        background: -webkit-linear-gradient(to left,#ff5858,#f09819);
+        background: -o-linear-gradient(to left,#ff5858,#f09819);
+        background: -moz-linear-gradient(to left,#ff5858,#f09819);
+        background: linear-gradient(to left,#ff5858,#f09819);
+        &.wh_chose_day {
+            background: -webkit-linear-gradient(to left,#828282,#c5c0c0);
+            background: -o-linear-gradient(to left,#828282,#c5c0c0);
+            background: -moz-linear-gradient(to left,#828282,#c5c0c0);
+            background: linear-gradient(to left,#828282,#c5c0c0);
+        }
+    }
+    .wh_content_item[data-v-2ebcbc83] {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .wh_content_item .wh_isToday[data-v-2ebcbc83] {
+        background: unset;
+        color: #ffcd05;
+        &.wh_chose_day {
+            color: #ffffff;
+            background: -webkit-linear-gradient(to left,#828282,#c5c0c0);
+            background: -o-linear-gradient(to left,#828282,#c5c0c0);
+            background: -moz-linear-gradient(to left,#828282,#c5c0c0);
+            background: linear-gradient(to left,#828282,#c5c0c0);
+        }
     }
 }

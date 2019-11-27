@@ -15,7 +15,7 @@
                             .calender
                                 Calendar(v-on:choseDay="clickDay" v-on:changeMonth="changeDate" :sundayStart="true" :textTop="dateArr" :markDate="markDate")
                         .course-block
-                            .course-date 11/11
+                            .course-date {{cdate}}
                             ul.course-list 
                                 li.course-list__item(v-for="item in course" v-if="item.date == isDate")
                                     .items
@@ -86,6 +86,7 @@ export default {
             dateArr: [ '日','一', '二', '三', '四', '五', '六'],
             markDate: ['2019/11/20','2019/11/26'],
             isDate: "2019/11/11",
+            cdate: "11/11",
             filter: {
                 start: "",
                 end: "",
@@ -107,7 +108,7 @@ export default {
                 },
                 {
                     title: "半小時水中單車＋半小時游泳課程",
-                    date: "2019/11/06",
+                    date: "2019/11/6",
                     time: "12:30",
                     location: "TR館",
                     status: "成功",
@@ -120,10 +121,9 @@ export default {
             this.selected = index;
         },
         clickDay(data) {
-            console.log(data); //选中某天
-        },
-        changeDate(data) {
-            console.log(data); //左右点击切换月份
+            this.isDate = data;
+            this.cdate = data.substr(5);
+            console.log(data);
         },
     },
 }
