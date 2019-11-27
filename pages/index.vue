@@ -20,6 +20,7 @@
         a(href="credit-card/card").button--green 信用卡資訊
         a(href="credit-card/add").button--green  新增信用卡
         a(href="credit-card/verification").button--green 密碼驗證
+        a(href="appointment").button--green 預約課程
       </div>
     </div>
   </div>
