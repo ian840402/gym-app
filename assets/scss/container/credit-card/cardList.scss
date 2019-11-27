@@ -1,3 +1,21 @@
+@keyframes delete{
+    0%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(1deg);
+    }
+    50%{
+        transform: rotate(0deg);
+    }
+    75%{
+        transform: rotate(-1deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
 .card-block-wrapper {
     margin: 0px 12px;
     .card-block {
@@ -11,16 +29,16 @@
             margin-bottom: 20px;
         }
         .card {
-            a {
-                display: block;
-                width: 100%;
-                height: 100%;
-            }
+            position: relative;
             .card-wrapper {
                 border-radius: 6px;
-                padding: 34px 26px 50px 26px;
-                box-sizing: border-box;
-                position: relative;
+                a {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    padding: 34px 26px 50px 26px;
+                    box-sizing: border-box;
+                }
                 .card__item {
                     &__title {
                         font-size: 13px;
@@ -46,16 +64,6 @@
                         padding: unset;
                     }
                 }
-                .card__delete {
-                    display: none;
-                    max-width: 27px;
-                    position: absolute;
-                    top: -13px;
-                    right: -13px;
-                    &.show {
-                        display: block;
-                    }
-                }
                 &:nth-child(1) {
                     background: -webkit-linear-gradient(to left,#8f4cda,#d555ab);
                     background: -o-linear-gradient(to left,#8f4cda,#d555ab);
@@ -63,16 +71,21 @@
                     background: linear-gradient(to left,#8f4cda,#d555ab);
                 }
                 &:nth-child(2) {
+                    background: -webkit-linear-gradient(to left,#a1c4fd,#759cff);
+                    background: -o-linear-gradient(to left,#a1c4fd,#759cff);
+                    background: -moz-linear-gradient(to left,#a1c4fd,#759cff);
+                    background: linear-gradient(to left,#a1c4fd,#759cff);
+                }
+                &.default-card {
                     background: -webkit-linear-gradient(to left,#f6d365,#fda085);
                     background: -o-linear-gradient(to left,#f6d365,#fda085);
                     background: -moz-linear-gradient(to left,#f6d365,#fda085);
                     background: linear-gradient(to left,#f6d365,#fda085);
                 }
-                &.default-card {
-                    background: -webkit-linear-gradient(to left,#a1c4fd,#759cff);
-                    background: -o-linear-gradient(to left,#a1c4fd,#759cff);
-                    background: -moz-linear-gradient(to left,#a1c4fd,#759cff);
-                    background: linear-gradient(to left,#a1c4fd,#759cff);
+                &.delete {
+                    animation-name: delete;
+                    animation-duration:.3s;
+                    animation-iteration-count:infinite;
                 }
             }
             .card-subscription {
@@ -84,6 +97,13 @@
             &.card-list__item {
                 margin-bottom: 24px;
             }
+            .card__delete {
+                max-width: 27px;
+                position: absolute;
+                top: -13px;
+                right: -13px;
+                cursor: pointer;
+            }
         }
     }
     .card-add {
@@ -93,6 +113,7 @@
         border-radius: 4px;
         border: 0.5px dashed #ffffff;
         background-color: #6e6e6e;
+        margin-top: 30px;
         a {
             display: flex;
             flex-direction: column;

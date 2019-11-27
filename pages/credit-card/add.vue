@@ -52,7 +52,7 @@ import { formVerification } from '~/assets/js/form-verification.js'
 export default {
     data(){
         return{
-            prePage: "/",
+            prePage: "/credit-card",
             isFill: false,
             errorStatus: false,
             cardNumber_1: "",

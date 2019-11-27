@@ -36,7 +36,18 @@
         }
     }
     &__delete {
-        max-width: 27px;
-        cursor: pointer;
+        width: 28px;
+        height: 28px;
+        input[type="checkbox"] {
+            display: none;
+        }
+        input[type="checkbox"] + label {
+            display: block;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            background: url('../images/delete-icon.png') left center no-repeat;
+            background-size: 100%;
+        }
     }
 }

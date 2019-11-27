@@ -40,7 +40,7 @@
 export default {
     data(){
         return{
-            prePage: "/",
+            prePage: "/credit-card",
             cardNumber: "6578",
             cardDate: "02/24",
             cardName: "Wong Chia Chi",
