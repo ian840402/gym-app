@@ -1,11 +1,18 @@
 .member-slideshow {
     position: relative;
-    z-index: -1;
     height: 208px;
-    &__cover {
+    .VueCarousel-wrapper {
+        opacity: 0.35;
+        background: url('../images/member-cover.png') center center no-repeat;
+        background-size: cover;
+        z-index:-1;
+    }
+    .VueCarousel-pagination {
         position: absolute;
-        width: 100%;
-        top: 0;
-        left: 0;
+        z-index: 3;
+        bottom: -8px;
+        button:focus {
+            outline: none;
+        }
     }
 }

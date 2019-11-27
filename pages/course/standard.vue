@@ -6,7 +6,13 @@
             .header__title  {{ title }}
         .main.course-info
             .course-slideshow
-                img(src="~assets/images/standard-img.png")
+                carousel(:perPage="1" :autoplay="true" :autoplayTimeout="2000" :loop="true")
+                    slide
+                        img(src="~assets/images/standard-img.png")
+                    slide
+                        img(src="~assets/images/standard-img.png")
+                    slide
+                        img(src="~assets/images/standard-img.png")
             .course-content
                 .course-content__id 課程代號：{{ cid }}
                 .course-content__content {{ content }}
@@ -34,9 +40,15 @@
 </template>
 
 <script>
+import { Carousel, Slide } from 'vue-carousel';
+
 export default {
     head: {
         title: "BUNGEE"
+    },
+    components: {
+        Carousel,
+        Slide
     },
     data() {
         return {

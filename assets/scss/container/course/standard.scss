@@ -5,9 +5,20 @@
     .course-slideshow {
         position: relative;
         height: 241px;
-        opacity: 0.35;
-        background-color: #a3a3a3;
-        z-index:-1;
+        
+        .VueCarousel-wrapper {
+            opacity: 0.35;
+            background-color: #a3a3a3;
+            z-index:-1;
+        }
+        .VueCarousel-pagination {
+            position: absolute;
+            z-index: 3;
+            bottom: -6px;
+            button:focus {
+                outline: none;
+            }
+        }
     }
     .course-content {
         padding: 36px 16px 0px 16px;
@@ -19,6 +30,7 @@
         &__id {
             font-size: 15px;
             letter-spacing: 1px;
+            margin-top: 10px;
             margin-bottom: 24px;
         }
         &__content {
@@ -127,6 +139,7 @@
         }
         &__gift {
             margin-bottom: 35px;
+            overflow: hidden;
             &__title {
                 font-size: 14px;
                 font-weight: 500;
@@ -138,8 +151,7 @@
                 &__item {
                     max-width: 184px;
                     width: 100%;
-                    .item-image {
-                    }
+                    margin-right: 18px;
                     .item-title {
                         text-align: center;
                         margin-top: 12px;

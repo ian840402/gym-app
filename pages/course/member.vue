@@ -6,10 +6,13 @@
             .header__title  {{ title }}
         .main.course-info
             .member-slideshow
-                .member-slideshow__cover
-                    img(src="~assets/images/member-cover.png")
-                .member-slideshow__image
-                    img(src="~assets/images/member-img.png")
+                carousel(:perPage="1" :autoplay="true" :autoplayTimeout="2000" :loop="true")
+                    slide
+                        img(src="~assets/images/member-img.png")
+                    slide
+                        img(src="~assets/images/member-img.png")
+                    slide
+                        img(src="~assets/images/member-img.png")
             .course-content.membercontent
                 .course-content__id 課程代號：{{ cid }}
                 .course-content__content {{ content }}
@@ -27,11 +30,10 @@
                             .item-time {{ item.number }}
                 .course-content__gift
                     .course-content__gift__title 贈送課程
-                    ul.course-content__gift__list
-                        li.course-content__gift__list__item(v-for="item in gift")
+                    carousel(:perPage="2" :paginationEnabled="false" :minSwipeDistance="1").course-content__gift__list
+                        slide(v-for="item in gift").course-content__gift__list__item
                             .item-image
                                 img(src="~assets/images/gift-img1.png")
-                                //- img(:src="item.image")
                             .item-title {{ item.title }}
                 .course-content__price
                     .course-content__price__title 價格
@@ -45,9 +47,15 @@
 </template>
 
 <script>
+import { Carousel, Slide } from 'vue-carousel';
+
 export default {
     head: {
         title: "健康活力卡"
+    },
+    components: {
+        Carousel,
+        Slide
     },
     data() {
         return {
