@@ -51,11 +51,11 @@
                     .all-appointment
                         .filter-block
                             .filter-block__input
-                                input(type="text" placeholder="2020/10/10" v-model="filter.start")
+                                datepicker(placeholder="xxxx/xx/xx" v-model="filter.start" format="yyyy/MM/dd")
                                 .filter-block__input__icon
                             .filter-block-separate -
                             .filter-block__input
-                                input(type="text" placeholder="2020/10/10" v-model="filter.end")
+                                datepicker(placeholder="xxxx/xx/xx" v-model="filter.end" format="yyyy/MM/dd")
                                 .filter-block__input__icon
                         .course-block
                             ul.course-list
@@ -70,10 +70,12 @@
 
 <script>
 import Calendar from 'vue-calendar-component';
+import Datepicker from 'vuejs-datepicker';
 
 export default {
     components: {
-        Calendar
+        Calendar,
+        Datepicker
     },
     data(){
         return{

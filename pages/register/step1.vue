@@ -35,7 +35,7 @@
                                     label(for="gender-item__female").gender-item__label 女
                     .form-style__item
                         label(for="birth").form-style__item__label *生日
-                        input(type="text" name="birth" placeholder="xxxx/xx/xx" v-model="birth" @change="verification")#birth.form-style__item__input
+                        datepicker(name="birth" placeholder="xxxx/xx/xx" v-model="birth" format="yyyy/MM/dd")#birth.form-style__item__input
                     .form-style__item
                         label(for="account").form-style__item__label *帳號(手機號碼)
                         input(type="text" name="account" placeholder="請輸入手機號碼" v-model="account" @change="verification")#account.form-style__item__input
@@ -53,9 +53,13 @@
 </template>
 
 <script>
+import Datepicker from 'vuejs-datepicker';
 import { formVerification } from '~/assets/js/form-verification.js'
 
 export default {
+    components: {
+        Datepicker
+    },
     data(){
         return{
             prePage: "/",
