@@ -5,6 +5,7 @@
     align-items: center;
     min-height: calc(100vh - 196px);
     margin-top: 130px;
+    box-sizing: border-box;
     &__msg {
         width: 100%;
         &__icon {

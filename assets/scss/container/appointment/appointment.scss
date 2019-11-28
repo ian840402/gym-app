@@ -43,7 +43,7 @@
         .course-list {
             &__item {
                 padding: 20px 0px;
-                border-bottom: 1px solid #FFFFFF50;
+                border-bottom: 1px solid #FFFFFF59;
                 overflow: hidden;
                 &:last-child {
                     border-bottom: unset;
@@ -105,6 +105,7 @@
                 border-radius: 3px;
                 border: solid 1px #818080;
                 padding: 0px 14px;
+                box-shadow: none;
             }
             &__icon {
                 width: 15px;

@@ -13,7 +13,7 @@
                         .calender-block
                             .calender-description 有預約的日期
                             .calender
-                                Calendar(v-on:choseDay="clickDay" v-on:changeMonth="changeDate" :sundayStart="true" :textTop="dateArr" :markDate="markDate")
+                                Calendar(v-on:choseDay="clickDay" :sundayStart="true" :textTop="dateArr" :markDate="markDate")
                         .course-block
                             .course-date {{cdate}}
                             ul.course-list 

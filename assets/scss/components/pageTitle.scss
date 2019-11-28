@@ -2,7 +2,6 @@
     display: flex;
     justify-content: center;
     position: relative;
-    padding: 0px 12px;
     box-sizing: border-box;
     z-index: 10;
     &__link > a{
@@ -13,7 +12,7 @@
         background-size: 100%;
         position: absolute;
         top: 50%;
-        left: 12px;
+        left: 0;
         margin-top: -7px;
     }
     &__title {

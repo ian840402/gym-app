@@ -31,7 +31,7 @@
                             input(type="text" name="card-date" placeholder="MM/YY" v-model="cardDate" @change="verification")#card-date.card-form-style__item__input
                         .card-form-style__item
                             label(for="card-cvc").card-form-style__item__label CVC
-                            input(type="text" name="card-cvc" placeholder="3-4位數字" v-model="cardCvc" @change="verification")#card-cvc.card-form-style__item__input
+                            input(type="text" name="card-cvc" placeholder="3-4位數字" v-model="cardCvc" @change="verification" maxlength="4")#card-cvc.card-form-style__item__input
                     .card-form-style__item
                         label(for="card-name").card-form-style__item__label 英文姓名
                         input(type="text" name="card-name" placeholder="請輸入卡片上英文姓名" v-model="cardName" @change="verification")#card-name.card-form-style__item__input

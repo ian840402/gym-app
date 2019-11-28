@@ -32,8 +32,8 @@
                     .card-form-style__global__item
                         input(type="checkbox" name="card-subscription" placeholder="請輸入卡片上英文姓名" v-model="cardSubscription")#card-subscription.card-form-style__global__item__checkbox
                         label(for="card-subscription").card-form-style__global__item__label 設為定期定額扣款
-                .card-form-style__submit
-                    input(type="submit" value="確定新增")#submit
+                .card-form-style__submit(:class="{unblock:formStatus}")
+                    input(type="submit" value="儲存設定")#submit
 </template>
 
 <script>
@@ -46,6 +46,7 @@ export default {
             cardName: "Wong Chia Chi",
             cardDefault: true,
             cardSubscription: true,
+            formStatus: true,
         }
     }
 }

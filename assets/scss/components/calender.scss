@@ -12,10 +12,15 @@
     .wh_top_changge li[data-v-2ebcbc83] {
         font-size: 16px;
     }
+    .wh_item_date[data-v-2ebcbc83] {
+        display:-webkit-flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+    }
     .wh_content_item {
         .wh_chose_day[data-v-2ebcbc83] {
-            width: 30px;
-            height: 30px;
             background: -webkit-linear-gradient(to left,#828282,#c5c0c0);
             background: -o-linear-gradient(to left,#828282,#c5c0c0);
             background: -moz-linear-gradient(to left,#828282,#c5c0c0);
@@ -23,8 +28,6 @@
         }
     }
     .wh_content_item>.wh_isMark[data-v-2ebcbc83] {
-        width: 30px;
-        height: 30px;
         background: -webkit-linear-gradient(to left,#ff5858,#f09819);
         background: -o-linear-gradient(to left,#ff5858,#f09819);
         background: -moz-linear-gradient(to left,#ff5858,#f09819);

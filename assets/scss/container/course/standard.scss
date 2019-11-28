@@ -1,6 +1,6 @@
 .course-info {
     position: relative;
-    margin: -66px -16px 0px -16px;
+    margin: -66px -28px 0px -28px;
     z-index: 1;
     .course-slideshow {
         position: relative;
@@ -207,9 +207,10 @@
                         &::after {
                             content: '';
                             display: block;
-                            width: 14px;
-                            height: 3px;
-                            background: #ffffff;
+                            width: 15px;
+                            height: 4px;
+                            background: url('../images/price-icon.png') center center no-repeat;
+                            background-size: 100%;
                             margin: 0px 12px;
                         }
                     }

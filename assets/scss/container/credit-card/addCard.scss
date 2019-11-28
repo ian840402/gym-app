@@ -3,7 +3,6 @@
     flex-direction: column;
     justify-content: space-between;
     min-height: calc(100vh - 98px);
-    padding: 0px 12px;
     margin-top: 32px;
     box-sizing: border-box;
     .form-wrapper {
@@ -63,7 +62,7 @@
             }
         }
         .card-number-error {
-            color: #ff0000;
+            color: #ff7f7f;
             font-size: 12px;
             position: absolute;
         }
