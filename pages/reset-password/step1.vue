@@ -13,8 +13,8 @@
                 .form-wrapper
                     .form-title 輸入驗證資料
                     .form-style__item
-                        label(for="user-verification-tel").form-style__item__label 手機號碼
-                        input(type="text" name="user-verification-tel" placeholder="請輸入手機號碼" v-model="tel" @change="verification")#user-verification-tel.form-style__item__input
+                        label(for="user-verification-tel").form-style__item__label 手機號碼<span class="format-error" v-if="errorStatus.phone">格式錯誤，請輸入數字!</span>
+                        input(type="text" name="user-verification-tel" placeholder="請輸入手機號碼" maxlength="10" v-model="tel" @keyup="phoneCheck" @change="verification")#user-verification-tel.form-style__item__input
                     .form-style__item
                         label(for="user-verification-birth").form-style__item__label 生日
                         input(type="text" name="user-verification-birth" placeholder="xxxx/xx/xx" v-model="birth" @change="verification")#user-verification-birth.form-style__item__input
@@ -23,15 +23,22 @@
 </template>
 
 <script>
+import Datepicker from 'vuejs-datepicker';
 import { formVerification } from '~/assets/js/form-verification.js'
 
     export default {
+        components: {
+            Datepicker
+        },
         head: {},
         data () {
             return {
                 prePage: "/",
                 tel: "",
                 birth: "",
+                errorStatus: {
+                phone: false,
+            },
                 formStatus: false,
             }
         },
@@ -43,6 +50,21 @@ import { formVerification } from '~/assets/js/form-verification.js'
                 ];
                 
                 this.formStatus = formVerification(Arr);
+            },
+            // 信用卡授權碼檢視格式
+            phoneCheck(){
+                let value = event.target.value;
+                let valueReg = /[1-9]/g;
+
+                if (valueReg.test(value)) {
+                    this.errorStatus.phone = false;
+                } else {
+                    if (value !== "") {
+                        this.errorStatus.phone = true;
+                    } else {
+                        this.errorStatus.phone = false;
+                    }
+                }
             }
         }
     }
