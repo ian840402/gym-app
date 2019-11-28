@@ -4,19 +4,32 @@
     z-index: 1;
     .course-slideshow {
         position: relative;
-        height: 241px;
-        
-        .VueCarousel-wrapper {
-            opacity: 0.35;
-            background-color: #a3a3a3;
-            z-index:-1;
-        }
-        .VueCarousel-pagination {
-            position: absolute;
-            z-index: 3;
-            bottom: -6px;
-            button:focus {
-                outline: none;
+        .VueCarousel {
+            height: 241px;
+            .VueCarousel-wrapper {
+                opacity: 0.35;
+                background-color: #a3a3a3;
+                z-index:-1;
+                img {
+                    height: 241px;
+                    object-fit: cover;
+                }
+            }
+            .VueCarousel-pagination {
+                position: absolute;
+                z-index: 3;
+                bottom: -6px;
+                button {
+                    &.VueCarousel-dot {
+                        border: 1px solid #ffffff;
+                        background-clip: unset;
+                        margin-right: 10px;
+                        margin-left: 10px;
+                    }
+                    &:focus {
+                        outline: none;
+                    }
+                }
             }
         }
     }
@@ -138,8 +151,7 @@
             }
         }
         &__gift {
-            margin-bottom: 35px;
-            overflow: hidden;
+            margin-bottom: 15px;
             &__title {
                 font-size: 14px;
                 font-weight: 500;
@@ -147,17 +159,35 @@
                 color: #ffcd05;
                 margin-bottom: 20px;
             }
+            &__list-wrapper {
+                margin-right: -16px;
+                height: 162px;
+                position: relative;
+                overflow: scroll;
+                -ms-overflow-style: none;
+                overflow: -moz-scrollbars-none;
+                &::-webkit-scrollbar {
+                    width: 0 !important;
+                }
+            }
             &__list {
+                display: flex;
+                position: absolute;
                 &__item {
-                    max-width: 184px;
-                    width: 100%;
-                    margin-right: 18px;
+                    width: 184px;
+                    margin-right : 18px;
                     .item-title {
+                        display: -webkit-box;
                         text-align: center;
                         margin-top: 12px;
                         font-size: 15px;
                         font-weight: 500;
                         letter-spacing: 1px;
+                        overflow:hidden;
+                        text-overflow: ellipsis;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
+                        white-space: normal;
                     }
                 }
             }

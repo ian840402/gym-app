@@ -84,7 +84,7 @@ export default {
                 { title:"全部紀錄" },
             ],
             dateArr: [ '日','一', '二', '三', '四', '五', '六'],
-            markDate: ['2019/11/20','2019/11/26'],
+            markDate: ['2019/11/11','2019/11/26'],
             isDate: "2019/11/11",
             cdate: "11/11",
             filter: {
@@ -108,7 +108,7 @@ export default {
                 },
                 {
                     title: "半小時水中單車＋半小時游泳課程",
-                    date: "2019/11/6",
+                    date: "2019/11/26",
                     time: "12:30",
                     location: "TR館",
                     status: "成功",

@@ -6,7 +6,7 @@
             .header__title  {{ title }}
         .main.course-info
             .member-slideshow
-                carousel(:perPage="1" :autoplay="true" :autoplayTimeout="2000" :loop="true")
+                carousel(:perPage="1" :autoplay="true" :autoplayTimeout="2000" :loop="true" :paginationColor="'unset'" :paginationActiveColor="'#ffffff'" :paginationPadding="0")
                     slide
                         img(src="~assets/images/member-img.png")
                     slide
@@ -30,11 +30,12 @@
                             .item-time {{ item.number }}
                 .course-content__gift
                     .course-content__gift__title 贈送課程
-                    carousel(:perPage="2" :paginationEnabled="false" :minSwipeDistance="1").course-content__gift__list
-                        slide(v-for="item in gift").course-content__gift__list__item
-                            .item-image
-                                img(src="~assets/images/gift-img1.png")
-                            .item-title {{ item.title }}
+                    .course-content__gift__list-wrapper
+                        ul.course-content__gift__list
+                            li.course-content__gift__list__item(v-for="item in gift")
+                                .item-image
+                                    img(src="~assets/images/gift-img1.png")
+                                .item-title {{ item.title }}
                 .course-content__price
                     .course-content__price__title 價格
                     .course-content__price__wrapper

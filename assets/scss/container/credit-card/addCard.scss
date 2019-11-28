@@ -66,6 +66,37 @@
             font-size: 12px;
             position: absolute;
         }
+        .card-form-date-wrapper {
+            display: flex;
+            width: 100%;
+            padding: 9px 8px;
+            box-sizing: border-box;
+            border-bottom: 1px solid #FFFFFF50;
+            input {
+                width: 32px;
+                font-size: 17px;
+                letter-spacing: 1.5px;
+                color: #ffffff;
+                border: unset;
+                background-color: unset;
+                &::placeholder {
+                    color: #b9b9b9;
+                }
+                &:focus {
+                    outline:none;
+                }
+                &:last-child {
+                    width: 100%;
+                }
+            }
+            .card-date-separate {
+                color: #b9b9b9;
+                margin: 0px 2px;
+                &.isfill {
+                    color: #ffffff;
+                }
+            }
+        }
         &__input {
             width: 100%;
             font-size: 17px;
@@ -124,7 +155,7 @@
         }
     }
     &__submit {
-        margin-bottom: 10px;
+        padding-bottom: 28px;
         input{
             display: block;
             width: 100%;

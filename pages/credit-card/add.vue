@@ -18,20 +18,25 @@
                                 img(src="~/assets/images/jcb-icon.png")
                     .card-form-style__item
                         label(for="card-number-1").card-form-style__item__label 卡號
-                        .card-number-placeholder(:class="{_wright:isFill}") 請輸入您的信用卡號
+                        .card-number-placeholder(:class="{_wright:isFill.cNum}") 請輸入您的信用卡號
                         .card-form-style__item__wrapper
                             input(type="text" name="card-number-1" maxlength="4" v-model="cardNumber_1" ref="cardNumberFirst" @keyup="creditCardNum" @change="verification")#card-number-1.card-form-style__item__input
                             input(type="text" name="card-number-2" maxlength="4" v-model="cardNumber_2" @keyup="creditCardNum" @click="creditCardNumFirst" @change="verification")#card-number-2.card-form-style__item__input
                             input(type="text" name="card-number-3" maxlength="4" v-model="cardNumber_3" @keyup="creditCardNum" @click="creditCardNumFirst" @change="verification")#card-number-3.card-form-style__item__input
                             input(type="text" name="card-number-4" maxlength="4" v-model="cardNumber_4" @keyup="creditCardNum" @click="creditCardNumFirst" @change="verification")#card-number-4.card-form-style__item__input
-                        .card-number-error(v-if="errorStatus") 請輸入數字!
+                        .card-number-error(v-if="errorStatus.cNum") 請輸入數字!
                     .card-form-style__wrapper
                         .card-form-style__item
-                            label(for="card-date-MM").card-form-style__item__label 有效期限
-                            input(type="text" name="card-date" placeholder="MM/YY" v-model="cardDate" @change="verification")#card-date.card-form-style__item__input
+                            label(for="card-date-mm").card-form-style__item__label 有效期限
+                            .card-form-date-wrapper(@click="creditCardDateFirst")
+                                input(type="text" name="card-date-mm" maxlength="2" placeholder="MM" ref="cardDateFirst" v-model="cardDateMM" @keyup="creditCardDate" @change="verification")#card-date-mm.card-form-style__item__date-input
+                                .card-date-separate(:class="{isfill:isFill.cDate}") /
+                                input(type="text" name="card-date-yy" maxlength="2" placeholder="YY" ref="inputDateContinu" v-model="cardDateYY"  @keyup="creditCardDate" @click="creditCardDateFirst" @change="verification")#card-date-yy.card-form-style__item__date-input
+                            .card-number-error(v-if="errorStatus.cDate") 請輸入數字!
                         .card-form-style__item
                             label(for="card-cvc").card-form-style__item__label CVC
-                            input(type="text" name="card-cvc" placeholder="3-4位數字" v-model="cardCvc" @change="verification" maxlength="4")#card-cvc.card-form-style__item__input
+                            input(type="text" name="card-cvc" maxlength="4" placeholder="3-4位數字" v-model="cardCvc" @keyup="creditCardCvcCheck" @change="verification")#card-cvc.card-form-style__item__input
+                            .card-number-error(v-if="errorStatus.cCvc") 請輸入數字!
                     .card-form-style__item
                         label(for="card-name").card-form-style__item__label 英文姓名
                         input(type="text" name="card-name" placeholder="請輸入卡片上英文姓名" v-model="cardName" @change="verification")#card-name.card-form-style__item__input
@@ -53,13 +58,21 @@ export default {
     data(){
         return{
             prePage: "/credit-card",
-            isFill: false,
-            errorStatus: false,
+            errorStatus: {
+                cNum: false,
+                cDate: false,
+                cCvc: false,
+            },
+            isFill: {
+                cNum: false,
+                cDate: false,
+            },
             cardNumber_1: "",
             cardNumber_2: "",
             cardNumber_3: "",
             cardNumber_4: "",
-            cardDate: "",
+            cardDateMM: "",
+            cardDateYY: "",
             cardCvc: "",
             cardName: "",
             cardDefault: false,
@@ -74,7 +87,8 @@ export default {
                     this.cardNumber_2,
                     this.cardNumber_3,
                     this.cardNumber_4,
-                    this.cardDate,
+                    this.cardDateMM,
+                    this.cardDateYY,
                     this.cardCvc,
                     this.cardName,
                 ];
@@ -82,8 +96,9 @@ export default {
                 this.formStatus = formVerification(Arr);
 
             },
+            // 信用卡卡號自動跳格並檢視格式
             creditCardNum(event){
-                this.isFill = true;
+                this.isFill.cNum = true;
 
                 let nextDom = event.target.nextElementSibling;
                 let value = event.target.value;
@@ -92,25 +107,77 @@ export default {
                 let maxlength = event.target.maxLength;
 
                 if (valueReg.test(value)) {
-                    this.errorStatus = false;
+                    this.errorStatus.cNum = false;
                     if (valueArr.length === maxlength && nextDom !== null) {
                         nextDom.focus();
                     }
                 } else {
                     if (value !== "") {
-                        this.errorStatus = true;
+                        this.errorStatus.cNum = true;
                     } else {
-                        this.errorStatus = false;
+                        this.errorStatus.cNum = false;
                     }
                 }
 
                 if (this.cardNumber_1 == "" && this.cardNumber_2 == "" && this.cardNumber_3 == "" && this.cardNumber_4 == "") {
-                    this.isFill = false;
+                    this.isFill.cNum = false;
                 }
             },
+            // 強制從第一格開始填寫信用卡號
             creditCardNumFirst(){
                 if (this.$refs.cardNumberFirst.value === "") {
                     this.$refs.cardNumberFirst.focus();
+                }
+            },
+            // 信用卡有效期限自動跳格並檢視格式
+            creditCardDate(event){
+                let nextDom = event.target.nextElementSibling;
+                let value = event.target.value;
+                let valueArr = event.target.value.split("");
+                let valueReg = /[1-9]/g;
+                let maxlength = event.target.maxLength;
+
+                if (valueReg.test(value)) {
+                    this.errorStatus.cDate = false;
+                    if (valueArr.length === maxlength && nextDom !== null) {
+                        if (nextDom.tagName === "INPUT") {
+                            nextDom.focus();
+                        } else {
+                            this.$refs.inputDateContinu.focus();
+                        }
+                    }
+                } else {
+                    if (value !== "") {
+                        this.errorStatus.cDate = true;
+                    } else {
+                        this.errorStatus.cDate = false;
+                    }
+                }
+                if (this.cardDateMM == "" && this.cardDateYY == "") {
+                    this.isFill.cDate = false;
+                } else {
+                    this.isFill.cDate = true;
+                }
+            },
+            // 強制從第一格開始填寫信用有效日期
+            creditCardDateFirst(){
+                if (this.$refs.cardDateFirst.value === "") {
+                    this.$refs.cardDateFirst.focus();
+                }
+            },
+            // 信用卡授權碼檢視格式
+            creditCardCvcCheck(){
+                let value = event.target.value;
+                let valueReg = /[1-9]/g;
+
+                if (valueReg.test(value)) {
+                    this.errorStatus.cCvc = false;
+                } else {
+                    if (value !== "") {
+                        this.errorStatus.cCvc = true;
+                    } else {
+                        this.errorStatus.cCvc = false;
+                    }
                 }
             }
         }

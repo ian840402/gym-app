@@ -1,18 +1,32 @@
 .member-slideshow {
     position: relative;
-    height: 208px;
-    .VueCarousel-wrapper {
-        opacity: 0.35;
-        background: url('../images/member-cover.png') center center no-repeat;
-        background-size: cover;
-        z-index:-1;
-    }
-    .VueCarousel-pagination {
-        position: absolute;
-        z-index: 3;
-        bottom: -8px;
-        button:focus {
-            outline: none;
+    .VueCarousel {
+        height: 208px;
+        .VueCarousel-wrapper {
+            opacity: 0.35;
+            background: url('../images/member-cover.png') center center no-repeat;
+            background-size: cover;
+            z-index:-1;
+            img {
+                height: 208px;
+                object-fit: cover;
+            }
         }
+        .VueCarousel-pagination {
+            position: absolute;
+            z-index: 3;
+            bottom: -8px;
+            button {
+                &.VueCarousel-dot {
+                    border: 1px solid #ffffff;
+                    background-clip: unset;
+                    margin-right: 10px;
+                    margin-left: 10px;
+                }
+                &:focus {
+                    outline: none;
+                }
+            }
+        }   
     }
 }
