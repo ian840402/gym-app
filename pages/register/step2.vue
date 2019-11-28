@@ -86,7 +86,7 @@ export default {
 
             let dom = event.target.nextElementSibling;
             let value = event.target.value;
-            let valueReg = /[1-9]/g;
+            let valueReg = /[0-9]/g;
             
             if (valueReg.test(value) && dom !== null) {
                 if (dom.tagName === "INPUT") {

@@ -103,7 +103,7 @@ export default {
                 let nextDom = event.target.nextElementSibling;
                 let value = event.target.value;
                 let valueArr = event.target.value.split("");
-                let valueReg = /[1-9]/g;
+                let valueReg = /[0-9]/g;
                 let maxlength = event.target.maxLength;
 
                 if (valueReg.test(value)) {
