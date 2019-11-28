@@ -6,6 +6,8 @@
             .header__title  {{ title }}
         .main.course-info
             .member-slideshow
+                .member-slideshow__cover
+                    img(src="~assets/images/member-cover.png")
                 carousel(:perPage="1" :autoplay="true" :autoplayTimeout="2000" :loop="true" :paginationColor="'unset'" :paginationActiveColor="'#ffffff'" :paginationPadding="0" :paginationSize="6")
                     slide
                         img(src="~assets/images/member-img.png")

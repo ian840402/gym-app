@@ -1,15 +1,26 @@
 .member-slideshow {
     position: relative;
+    &__cover {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        pointer-events: none;
+        img {
+            height: 208px;
+            object-fit: cover;
+        }
+    }
     .VueCarousel {
         height: 208px;
         .VueCarousel-wrapper {
-            opacity: 0.35;
-            background: url('../images/member-cover.png') center center no-repeat;
-            background-size: cover;
             z-index:0;
-            img {
-                height: 208px;
-                object-fit: cover;
+            .VueCarousel-slide {
+                img {
+                    height: 208px;
+                    object-fit: cover;
+                }
             }
         }
         .VueCarousel-pagination {
