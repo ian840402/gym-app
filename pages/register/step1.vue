@@ -37,8 +37,8 @@
                         label(for="birth").form-style__item__label *生日
                         datepicker(name="birth" placeholder="xxxx/xx/xx" v-model="birth" format="yyyy/MM/dd")#birth.form-style__item__input
                     .form-style__item
-                        label(for="account").form-style__item__label *帳號(手機號碼)
-                        input(type="text" name="account" placeholder="請輸入手機號碼" v-model="account" @change="verification")#account.form-style__item__input
+                        label(for="account").form-style__item__label *帳號(手機號碼)<span class="format-error" v-if="errorStatus.phone">格式錯誤，請輸入數字!</span>
+                        input(type="text" name="account" placeholder="請輸入手機號碼" maxlength="10" v-model="account" @keyup="phoneCheck" @change="verification")#account.form-style__item__input
                     .form-style__item
                         label(for="password").form-style__item__label *密碼
                             .show-password
@@ -72,6 +72,9 @@ export default {
             password: "",
             rePassword: "",
             rpStatus: false,
+            errorStatus: {
+                phone: false,
+            },
             formStatus: false,
         }
     },
@@ -105,6 +108,21 @@ export default {
                 this.$refs.password.type = "text";
             } else {
                 this.$refs.password.type = "password";
+            }
+        },
+        // 信用卡授權碼檢視格式
+        phoneCheck(){
+            let value = event.target.value;
+            let valueReg = /[1-9]/g;
+
+            if (valueReg.test(value)) {
+                this.errorStatus.phone = false;
+            } else {
+                if (value !== "") {
+                    this.errorStatus.phone = true;
+                } else {
+                    this.errorStatus.phone = false;
+                }
             }
         }
     }

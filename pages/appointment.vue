@@ -55,7 +55,7 @@
                                 .filter-block__input__icon
                             .filter-block-separate -
                             .filter-block__input
-                                datepicker(placeholder="xxxx/xx/xx" v-model="filter.end" format="yyyy/MM/dd")
+                                datepicker(placeholder="xxxx/xx/xx" v-model="filter.end" format="yyyy/MM/dd" :calendar-class="'filter-end'")
                                 .filter-block__input__icon
                         .course-block
                             ul.course-list

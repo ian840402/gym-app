@@ -2,7 +2,17 @@
     div {
         color: #000000;
     }
-    input:focus {
-        outline: none;
+    input {
+        width: 100%;
+        font-size: 17px;
+        color: #ffffff;
+        border: unset;
+        background-color: unset;
+        &:focus {
+            outline: none;
+        }
+    }
+    .filter-end {
+        right: 0;
     }
 }
